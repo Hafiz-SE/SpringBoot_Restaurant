@@ -7,6 +7,8 @@ import org.atmc.restaurantbackend.shared.dto.UserDto;
 import org.atmc.restaurantbackend.shared.utils.Utils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 
@@ -20,6 +22,9 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public UserDto createUser(UserDto user) {
+		//UserEntity storedUser = userRepository.findByUEmail(user.getuEmail());
+		//if(storedUser !=null) throw new RuntimeException("EMAIL EXISTS!");
+		
 		UserEntity userEntity = new UserEntity();
 		BeanUtils.copyProperties(user, userEntity);
 		userEntity.setuId(utils.generateUserId(20));
@@ -30,5 +35,13 @@ public class UserServiceImpl implements UserService {
 		BeanUtils.copyProperties(storedUserDetails, returnValue);
 		return returnValue;
 	}
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 
 }
