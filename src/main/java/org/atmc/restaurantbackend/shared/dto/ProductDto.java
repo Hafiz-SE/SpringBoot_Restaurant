@@ -9,11 +9,21 @@ public class ProductDto implements Serializable {
 	private static final long serialVersionUID = 5354340558438238283L;
 	
 	String pName;
+	String pDescription;
 	String pPrice;
 	int pStock;
 	int pCategory;
 	String pImg;
+	int id ;
 	
+	
+	
+	public String getpDescription() {
+		return pDescription;
+	}
+	public void setpDescription(String pDescription) {
+		this.pDescription = pDescription;
+	}
 	public String getpName() {
 		return pName;
 	}
@@ -44,4 +54,12 @@ public class ProductDto implements Serializable {
 	public void setpImg(String pImg) {
 		this.pImg = pImg;
 	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	
 }

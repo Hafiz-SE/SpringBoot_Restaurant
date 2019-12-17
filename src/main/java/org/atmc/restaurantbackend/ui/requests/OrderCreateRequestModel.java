@@ -4,19 +4,13 @@ import java.io.Serializable;
 
 public class OrderCreateRequestModel {
 	
-	private String oDescription;
 	private String oInstructions;
 	private String oQuantity;
 	private String oPrice;
 	private String oUserId;
 	private int oProductId;
 	
-	public String getoDescription() {
-		return oDescription;
-	}
-	public void setoDescription(String oDescription) {
-		this.oDescription = oDescription;
-	}
+
 	public String getoInstructions() {
 		return oInstructions;
 	}

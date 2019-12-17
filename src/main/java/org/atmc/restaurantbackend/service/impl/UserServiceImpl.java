@@ -1,5 +1,7 @@
 package org.atmc.restaurantbackend.service.impl;
 
+import java.util.ArrayList;
+
 import org.atmc.restaurantbackend.io.entity.UserEntity;
 import org.atmc.restaurantbackend.repository.UserRepository;
 import org.atmc.restaurantbackend.service.UserService;
@@ -7,9 +9,9 @@ import org.atmc.restaurantbackend.shared.dto.UserDto;
 import org.atmc.restaurantbackend.shared.utils.Utils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
 import org.springframework.stereotype.Service;
+
 
 
 @Service
@@ -36,10 +38,16 @@ public class UserServiceImpl implements UserService {
 		return returnValue;
 	}
 
+	
+	
 	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+	public UserDto getUser(String email) {
+		UserEntity storedUser = userRepository.findByuEmail(email);
+		if(storedUser == null) {throw new RuntimeException("User is not in database");}
+		
+		UserDto returnVal = new UserDto();
+		BeanUtils.copyProperties(storedUser, returnVal);
+		return returnVal;
 	}
 
 	

@@ -30,9 +30,9 @@ public class UserController {
 		
 		UserDto createdUser = userService.createUser(userdto);
 		BeanUtils.copyProperties(createdUser, returnValue);
-		
-		
 		return returnValue;
 	}
+	
+	
 
 }

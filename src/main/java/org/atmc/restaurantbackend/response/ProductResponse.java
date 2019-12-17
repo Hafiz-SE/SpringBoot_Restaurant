@@ -2,12 +2,21 @@ package org.atmc.restaurantbackend.response;
 
 public class ProductResponse {
 
+	int id;
 	String pName;
+	String pDescription;
 	String pPrice;
 	int pStock;
 	int pCategory;
 	String pImg;
 	
+	
+	public String getpDescription() {
+		return pDescription;
+	}
+	public void setpDescription(String pDescription) {
+		this.pDescription = pDescription;
+	}
 	public String getpName() {
 		return pName;
 	}
@@ -38,4 +47,12 @@ public class ProductResponse {
 	public void setpImg(String pImg) {
 		this.pImg = pImg;
 	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	
 }

@@ -6,19 +6,13 @@ public class OrderDto implements Serializable {
 
 	private static final long serialVersionUID = 6825076829491623862L;
 	
-	private String oDescription;
 	private String oInstructions;
 	private String oQuantity;
 	private String oPrice;
 	private String oUserId;
 	private int oProductId;
 	
-	public String getoDescription() {
-		return oDescription;
-	}
-	public void setoDescription(String oDescription) {
-		this.oDescription = oDescription;
-	}
+
 	public String getoInstructions() {
 		return oInstructions;
 	}

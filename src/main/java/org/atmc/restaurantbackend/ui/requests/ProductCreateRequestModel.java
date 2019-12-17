@@ -5,11 +5,20 @@ import org.springframework.web.multipart.MultipartFile;
 public class ProductCreateRequestModel {
 	
 	String pName;
+	String pDescription;
 	String pPrice;
 	int pStock;
 	int pCategory;
 	String pImg;
 	
+	
+	
+	public String getpDescription() {
+		return pDescription;
+	}
+	public void setpDescription(String pDescription) {
+		this.pDescription = pDescription;
+	}
 	public String getpName() {
 		return pName;
 	}
@@ -40,12 +49,15 @@ public class ProductCreateRequestModel {
 	public void setpImg(String pImg) {
 		this.pImg = pImg;
 	}
-	public ProductCreateRequestModel(String pName, String pPrice, int pStock, int pCategory) {
+	public ProductCreateRequestModel(String pName, String pDescription, String pPrice, int pStock, int pCategory) {
+		super();
 		this.pName = pName;
+		this.pDescription = pDescription;
 		this.pPrice = pPrice;
 		this.pStock = pStock;
 		this.pCategory = pCategory;
-	}
+		
+	}	
 	
 	
 }

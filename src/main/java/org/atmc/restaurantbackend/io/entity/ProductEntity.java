@@ -24,6 +24,8 @@ public class ProductEntity implements Serializable{
 		private int pCategory;
 		@Column
 		private String pImg;
+		@Column 
+		private String pDescription;
 		
 		public String getpName() {
 			return pName;
@@ -60,6 +62,12 @@ public class ProductEntity implements Serializable{
 		}
 		public void setId(long id) {
 			this.id = id;
+		}
+		public String getpDescription() {
+			return pDescription;
+		}
+		public void setpDescription(String pDescription) {
+			this.pDescription = pDescription;
 		}
 		
 		

@@ -19,8 +19,7 @@ public class OrderEntity implements Serializable {
 	@GeneratedValue
 	private long id;
 	
-	@Column
-	private String oDescription;
+
 	@Column
 	private String oInstructions;
 	@Column
@@ -37,12 +36,7 @@ public class OrderEntity implements Serializable {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public String getoDescription() {
-		return oDescription;
-	}
-	public void setoDescription(String oDescription) {
-		this.oDescription = oDescription;
-	}
+
 	public String getoInstructions() {
 		return oInstructions;
 	}
