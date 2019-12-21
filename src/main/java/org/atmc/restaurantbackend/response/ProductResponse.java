@@ -2,13 +2,13 @@ package org.atmc.restaurantbackend.response;
 
 public class ProductResponse {
 
-	int id;
-	String pName;
-	String pDescription;
-	String pPrice;
-	int pStock;
-	int pCategory;
-	String pImg;
+	private long id;
+	private String pName;
+	private String pDescription;
+	private String pPrice;
+	private int pStock;
+	private int pCategory;
+	private String pImg;
 	
 	
 	public String getpDescription() {
@@ -47,12 +47,12 @@ public class ProductResponse {
 	public void setpImg(String pImg) {
 		this.pImg = pImg;
 	}
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
-	
+
 	
 }

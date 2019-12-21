@@ -43,7 +43,7 @@ public class ProductController {
 
 
 	@PostMapping
-	public ProductResponse createProduct(@RequestParam String pName,@RequestParam String pDescription, @RequestParam String pPrice, @RequestParam int pStock, @RequestParam int pCategory, @RequestPart(required = false) MultipartFile image) throws Exception {
+	public ProductResponse createProduct(@RequestParam String pName,@RequestParam String pDescription, @RequestParam String pPrice, @RequestParam int pStock, @RequestParam int pCategory, @RequestPart(required = false) MultipartFile image ) throws Exception {
 		ProductCreateRequestModel productCreateRequestModel= new ProductCreateRequestModel(pName,pDescription,pPrice,pStock,pCategory);
 		ProductResponse productResponse = new ProductResponse();
 		ProductDto productDto = new ProductDto();

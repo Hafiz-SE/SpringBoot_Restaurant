@@ -49,6 +49,8 @@ public class ProductServiceImpl implements ProductService {
 		for (ProductEntity source: products ) {
 	        ProductDto target= new ProductDto();
 	        BeanUtils.copyProperties(source , target);
+			System.out.println(target.getId());
+
 	        productdtos.add(target);
 	     }
 		return productdtos;
