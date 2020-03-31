@@ -27,13 +27,13 @@ public class ProductServiceImpl implements ProductService {
 		BeanUtils.copyProperties(productDto, productEntity);
 		String folder = "/photos/";
 		byte[] bytes = imageFile.getBytes();
-		Path path = Paths.get(folder+imageFile.getOriginalFilename());
+		Path path = Paths.get(folder + imageFile.getOriginalFilename());
 		Files.write(path, bytes);
-		
-		productEntity.setpImg(folder+imageFile.getOriginalFilename());
-		
+
+		productEntity.setpImg(folder + imageFile.getOriginalFilename());
+
 		ProductEntity storedProductDetails = productRepository.save(productEntity);
-		
+
 		ProductDto returnDto = new ProductDto();
 		BeanUtils.copyProperties(storedProductDetails, returnDto);
 		return returnDto;
@@ -41,27 +41,19 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public List<ProductDto> GetProductByCategory(int category) {
-		
-		List<ProductEntity> products=productRepository.findBypCategory(category);
 
-		List<ProductDto> productdtos = new ArrayList<ProductDto> ();
-		
-		for (ProductEntity source: products ) {
-	        ProductDto target= new ProductDto();
-	        BeanUtils.copyProperties(source , target);
+		List<ProductEntity> products = productRepository.findBypCategory(category);
+
+		List<ProductDto> productdtos = new ArrayList<ProductDto>();
+
+		for (ProductEntity source : products) {
+			ProductDto target = new ProductDto();
+			BeanUtils.copyProperties(source, target);
 			System.out.println(target.getId());
 
-	        productdtos.add(target);
-	     }
+			productdtos.add(target);
+		}
 		return productdtos;
 	}
-	
-	
-	
 
-
-
-
-	
-	
 }
